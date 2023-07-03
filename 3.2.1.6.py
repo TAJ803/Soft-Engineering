@@ -1,4 +1,4 @@
-﻿import time
+import time
 
 # Write a for loop that counts to five.
     # Body of the loop - print the loop iteration number and the word "Mississippi".
@@ -9,5 +9,6 @@
 i = 0
 for i in range (5):
     i = i + 1
+    time.sleep(1)
     print(i, "Mississippi")
 print("Ready or not, here I come!")
