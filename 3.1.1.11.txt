@@ -1,0 +1,43 @@
+income = float(input("Enter the annual income: "))
+jury_service = input("Do you do jury service: Please, type yes or no: ")
+
+#
+# Write your code here.
+#
+
+if income <= 0:
+    print("No tax this year")
+    exit()
+
+if income < 85528:
+    #print("You must pay 18% PIT and you will get 556.2 tax relief")
+    tax = ((18 * income)/100) - 556.2
+else:
+    income > 85528
+    print("you are in the higher tax bracket, you will pay 14839.2 + 32% surpluse over 85528")
+    surplus_over_85528 = income % 85528
+    duduction_of_32_percentage = (32 * surplus_over_85528) / 100
+    tax = 14839.2 + duduction_of_32_percentage
+    
+tax = round(tax, 0) # round value to zero
+
+# If someone work for jury, they will get discount on their tax / 2
+
+if jury_service == "yes" or jury_service == "Yes":
+    tax = (tax / 2)
+    print("Jury service tax deduction applied")
+elif jury_service == "no" or jury_service == "No":
+    tax = tax
+    print("Jury service tax deduction not applied")
+else:
+    print("please type yes or no for jury service tax deduction scheme")
+    exit()
+#else:
+#    print("you are not eligible for the jury service discount")
+
+
+if tax < 0:         # if tax is less than zero
+    tax = 0.0       # than tax will be equal to zero
+    print("you are below the threashold level, you do not need to pay any tax this year")
+
+print("The tax is:", tax, "thalers")
