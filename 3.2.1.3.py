@@ -1,4 +1,4 @@
-﻿secret_number = 777
+secret_number = 777
 
 print(
 """
@@ -12,6 +12,8 @@ print(
 """)
 number = int(input("enter the number: "))
 while number != secret_number:
+    if number == 7:
+        print("getting closer")
     print("Ha ha! You're stuck in my loop!")
     number = int(input("enter the number: "))
 else:
